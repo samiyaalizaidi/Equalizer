@@ -72,3 +72,8 @@ The waveform obtained when the ``8kHz`` signal was passed through the filter:
   <img src="img/8khz.png" alt="wf 8khz">
 </p>
 
+---
+
+### Contributors
+- [Samiya Ali Zaidi](https://github.com/samiyaalizaidi)
+- Huzaifah Tariq Ahmed
