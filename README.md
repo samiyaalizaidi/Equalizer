@@ -53,7 +53,7 @@ The ROM module stores the values of the audio signal for both signals used in th
 
 ### FIR Filter
 
-The module (in ``filter.v``) has the coefficients of the filter as signed parameters, and takes the audio data as input. The audio data is first scaled down by a factor of 8, and then the convolution operation is performed. Shift registers are used to introduce the delays in the input signals.
+The module (in ``filter.v``) has the coefficients of the filter as signed parameters and takes the audio data as input. The audio data is first scaled down by a factor of 8, and then the convolution operation is performed. Shift registers are used to introduce the delays in the input signals.
 
 ### Top-Level Module
 The top-level module (in ``top_module.v``) simply connects the previous two modules, by passing the output of the ROM as the input into the FIR Filter.
@@ -61,4 +61,14 @@ The top-level module (in ``top_module.v``) simply connects the previous two modu
 ## Simulation
 
 The testbench used for this module (in ``testbench.v``) instantiates the top-level module. There's also a ``repeat`` command used to increment the address of the value to be obtained from the ROM.
+
+The waveform obtained when the ``100Hz`` signal was passed through the filter:
+<p align="center">
+  <img src="img/100hz.png" alt="wf 100hz">
+</p>
+
+The waveform obtained when the ``8kHz`` signal was passed through the filter:
+<p align="center">
+  <img src="img/8khz.png" alt="wf 8khz">
+</p>
 
