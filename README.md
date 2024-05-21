@@ -42,3 +42,23 @@ Two audio tones were used to test the designed filter: one low-frequency audio o
 
 ### Conversion to Binary
 To convert the audio signals into 8-bit signed binary numbers, we first scaled the audio signal coefficients by a factor of ``128`` and then converted the fixed point numbers into signed binary numbers. These numbers were stored in a ``.txt`` file, and then eventually into a ``ROM`` module. For this process, a ``MATLAB`` script was used.
+
+## Verilog Implementation
+
+There were three modules involved in the ``Verilog`` Implementation of this project: ROM, FIR Filter, and the Top-level Module.
+
+### ROM
+
+The ROM module stores the values of the audio signal for both signals used in this case (in ``ROM_100Hz.v`` and ``ROM_8000Hz.v``). This module takes as input the address of the value that needs to be returned and returns the value associated with it on the positive edge of the clock.
+
+### FIR Filter
+
+The module (in ``filter.v``) has the coefficients of the filter as signed parameters, and takes the audio data as input. The audio data is first scaled down by a factor of 8, and then the convolution operation is performed. Shift registers are used to introduce the delays in the input signals.
+
+### Top-Level Module
+The top-level module (in ``top_module.v``) simply connects the previous two modules, by passing the output of the ROM as the input into the FIR Filter.
+
+## Simulation
+
+The testbench used for this module (in ``testbench.v``) instantiates the top-level module. There's also a ``repeat`` command used to increment the address of the value to be obtained from the ROM.
+
