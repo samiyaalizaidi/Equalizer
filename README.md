@@ -24,7 +24,7 @@ As a result, this was the magnitude response of the designed filter:
 </p>
 
 ### Conversion to Binary
-To represent the coefficients in signed 10-bit binary numbers, we scaled the coefficients by ``512`` and then converted the resulting fixed-point number into signed binary. These numbers were stored in a ``.txt`` file, and then eventually into a ``ROM`` module. For this process, a ``MATLAB`` script was used.
+To represent the coefficients in signed 10-bit binary numbers, we scaled the coefficients by ``512`` and then converted the resulting fixed-point number into signed binary. These numbers were then used as parameters for the ``fir_low_pass_filter`` module in ``filter.v``. A ``MATLAB`` script was used for this process.
 
 ## Input Audio
 
@@ -41,4 +41,4 @@ Two audio tones were used to test the designed filter: one low-frequency audio o
 </p>
 
 ### Conversion to Binary
-To convert the audio signals into 8-bit signed binary numbers, we first scaled the audio signal coefficients by a factor of ``128`` and then converted the fixed point numbers into signed binary numbers. For this process, a ``MATLAB`` script was used.
+To convert the audio signals into 8-bit signed binary numbers, we first scaled the audio signal coefficients by a factor of ``128`` and then converted the fixed point numbers into signed binary numbers. These numbers were stored in a ``.txt`` file, and then eventually into a ``ROM`` module. For this process, a ``MATLAB`` script was used.
