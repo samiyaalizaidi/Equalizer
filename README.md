@@ -76,4 +76,4 @@ The waveform obtained when the ``8kHz`` signal was passed through the filter:
 
 ### Contributors
 - [Samiya Ali Zaidi](https://github.com/samiyaalizaidi)
-- Huzaifah Tariq Ahmed
+- [Huzaifah Tariq Ahmed](https://github.com/huzaifahtariqahmed)
